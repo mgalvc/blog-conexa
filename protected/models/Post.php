@@ -44,9 +44,10 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('texto, autor, titulo, created_at, updated_at, id_categoria', 'required'),
+			array('texto, autor, titulo, id_categoria', 'required'),
 			array('id_categoria', 'numerical', 'integerOnly'=>true),
-			array('texto, autor, titulo', 'length', 'max'=>128),
+			array('autor, titulo', 'length', 'max'=>128),
+			array('texto', 'length', 'max'=>500),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, texto, autor, titulo, created_at, updated_at, id_categoria', 'safe', 'on'=>'search'),
@@ -62,7 +63,7 @@ class Post extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'comentarios' => array(self::HAS_MANY, 'Comentario', 'id_post'),
-			'idCategoria' => array(self::BELONGS_TO, 'Categoria', 'id_categoria'),
+			'categoria' => array(self::BELONGS_TO, 'Categoria', 'id_categoria'),
 		);
 	}
 
@@ -76,9 +77,10 @@ class Post extends CActiveRecord
 			'texto' => 'Texto',
 			'autor' => 'Autor',
 			'titulo' => 'Titulo',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
+			'created_at' => 'Postado em',
+			'updated_at' => 'Atualizado em',
 			'id_categoria' => 'Id Categoria',
+			'categoria' => 'Categoria'
 		);
 	}
 

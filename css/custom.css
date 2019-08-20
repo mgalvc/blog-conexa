@@ -1,0 +1,8 @@
+.text-abstract {
+	overflow-wrap: break-word;
+}
+
+.full-text {
+	overflow-wrap: break-word;
+	max-width: 80%;
+}
