@@ -1,0 +1,98 @@
+2019/08/19 10:25:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'testdrive.tbl_post' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_post`.
+in /var/www/html/blog/index.php (13)
+2019/08/19 10:45:06 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1044] Access denied for user 'Teste'@'%' to database 'blog' in /var/www/html/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/yii/framework/base/CModule.php(104): CModule->getComponent('db')
+#4 /var/www/html/yii/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/html/yii/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /var/www/html/yii/framework/gii/CCodeGenerator.php(154): CFormModel->__construct()
+#7 /var/www/html/yii/framework/gii/CCodeGenerator.php(64): CCodeGenerator->prepare()
+#8 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/html/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#11 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/yii/framework/web/CWebApplication.php(283): CController->run('')
+#13 /var/www/html/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii/model')
+#14 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/html/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/blog/index.php?r=gii/model
+HTTP_REFERER=http://localhost/blog/index.php?r=gii/model
+---
+2019/08/19 11:05:37 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'Teste'@'localhost' (using password: YES) in /var/www/html/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/yii/framework/base/CModule.php(104): CModule->getComponent('db')
+#4 /var/www/html/yii/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/html/yii/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /var/www/html/yii/framework/gii/CCodeGenerator.php(154): CFormModel->__construct()
+#7 /var/www/html/yii/framework/gii/CCodeGenerator.php(64): CCodeGenerator->prepare()
+#8 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/html/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#11 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/yii/framework/web/CWebApplication.php(283): CController->run('')
+#13 /var/www/html/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii/model')
+#14 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/html/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/blog/index.php?r=gii/model
+HTTP_REFERER=http://localhost/blog/index.php?r=gii
+---
+2019/08/19 11:05:49 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'blog' in /var/www/html/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/yii/framework/base/CModule.php(104): CModule->getComponent('db')
+#4 /var/www/html/yii/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/html/yii/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /var/www/html/yii/framework/gii/CCodeGenerator.php(154): CFormModel->__construct()
+#7 /var/www/html/yii/framework/gii/CCodeGenerator.php(64): CCodeGenerator->prepare()
+#8 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/html/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#11 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/yii/framework/web/CWebApplication.php(283): CController->run('')
+#13 /var/www/html/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii/model')
+#14 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/html/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/blog/index.php?r=gii/model
+HTTP_REFERER=http://localhost/blog/index.php?r=gii
+---
+2019/08/19 11:05:54 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'blog' in /var/www/html/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/yii/framework/base/CModule.php(104): CModule->getComponent('db')
+#4 /var/www/html/yii/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/html/yii/framework/web/CFormModel.php(40): ModelCode->init()
+#6 /var/www/html/yii/framework/gii/CCodeGenerator.php(154): CFormModel->__construct()
+#7 /var/www/html/yii/framework/gii/CCodeGenerator.php(64): CCodeGenerator->prepare()
+#8 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): CCodeGenerator->actionIndex()
+#9 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/www/html/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#11 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/yii/framework/web/CWebApplication.php(283): CController->run('')
+#13 /var/www/html/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii/model')
+#14 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /var/www/html/blog/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/blog/index.php?r=gii/model
+HTTP_REFERER=http://localhost/blog/index.php?r=gii
+---
+2019/08/19 11:06:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.tbl_categoria' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_categoria`.
+in /var/www/html/blog/index.php (13)
+2019/08/19 11:07:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.tbl_categoria' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `blog`.`tbl_categoria`.
+in /var/www/html/blog/index.php (13)
+2019/08/19 11:08:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.tbl_categoria' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `blog`.`tbl_categoria`.
+in /var/www/html/blog/index.php (13)
+2019/08/19 11:12:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.tbl_categoria' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `tbl_categoria`.
+in /var/www/html/blog/index.php (13)
