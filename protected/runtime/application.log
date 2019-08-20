@@ -659,3 +659,36 @@ Stack trace:
 REQUEST_URI=/blog/index.php?r=post/delete&id=1
 HTTP_REFERER=http://localhost/blog/index.php?r=post/view&id=1
 ---
+2019/08/20 11:53:51 [error] [exception.CException] CException: SiteController cannot find the requested view "post/index". in /var/www/html/yii/framework/web/CController.php:879
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(783): CController->renderPartial('post/index', NULL, true)
+#1 /var/www/html/blog/protected/controllers/SiteController.php(32): CController->render('post/index')
+#2 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#3 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /var/www/html/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#7 /var/www/html/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/index')
+#8 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /var/www/html/blog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/blog/index.php?r=site/index
+HTTP_REFERER=http://localhost/blog/index.php?r=post/index
+---
+2019/08/20 11:53:57 [error] [php] Undefined variable: dataProvider (/var/www/html/blog/protected/views/post/index.php:18)
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(870): SiteController->renderFile()
+#1 /var/www/html/yii/framework/web/CController.php(783): SiteController->renderPartial()
+#2 /var/www/html/blog/protected/controllers/SiteController.php(32): SiteController->render()
+#3 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#4 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/www/html/yii/framework/web/CController.php(287): SiteController->runAction()
+#6 /var/www/html/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#7 /var/www/html/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#8 /var/www/html/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#9 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/html/blog/index.php(13): CWebApplication->run()
+REQUEST_URI=/blog/index.php?r=site/index
+in /var/www/html/blog/protected/views/post/index.php (18)
+in /var/www/html/blog/protected/controllers/SiteController.php (32)
+in /var/www/html/blog/index.php (13)
