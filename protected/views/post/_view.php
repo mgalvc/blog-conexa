@@ -9,12 +9,12 @@
 	<?php echo CHtml::link(CHtml::encode($data->titulo), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('texto')); ?>:</b>
-	<?php echo CHtml::encode($this->getAbstractFrom($data->texto)); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('autor')); ?>:</b>
 	<?php echo CHtml::encode($data->autor); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('texto')); ?>:</b>
+	<?php echo CHtml::encode($this->getAbstractFrom($data->texto)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created_at')); ?>:</b>

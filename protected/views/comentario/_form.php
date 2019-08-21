@@ -17,19 +17,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'autor'); ?>
-		<?php echo $form->textField($model,'autor',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->textField($model,'autor',array('size'=>60,'maxlength'=>128, 'minlength' => 3)); ?>
 		<?php echo $form->error($model,'autor'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'texto'); ?>
-		<?php echo $form->textField($model,'texto',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->textField($model,'texto',array('size'=>60,'maxlength'=>128, 'minlength' => 3)); ?>
 		<?php echo $form->error($model,'texto'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row" hidden>
 		<?php echo $form->labelEx($model,'id_post'); ?>
-		<?php echo $form->textField($model,'id_post'); ?>
+		<?php echo $form->textField($model,'id_post', array('value' => Yii::app()->request->getParam('post_id'))); ?>
 		<?php echo $form->error($model,'id_post'); ?>
 	</div>
 

@@ -10,6 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'Início', 'url'=>array('index')),
 	array('label'=>'Editar', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Comentar', 'url'=>array('comentario/create', 'post_id'=>$model->id)),
 	array('label'=>'Deletar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 );
 ?>
@@ -35,3 +36,10 @@ $this->menu=array(
 		Atualizado em <?php echo $this->formattedDate($model->updated_at) ?>
 	</i>
 </span>
+
+<h2 class="comments-title">Comentários</h2>
+
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$commentsProvider,
+	'itemView'=>'../comentario/_view',
+)); ?>

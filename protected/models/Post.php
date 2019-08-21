@@ -103,8 +103,10 @@ class Post extends CActiveRecord
 		$criteria->compare('updated_at',$this->updated_at,true);
 		$criteria->compare('id_categoria',$this->id_categoria);
 
+		$criteria->order = 'created_at DESC';
+
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>$criteria
 		));
 	}
 }

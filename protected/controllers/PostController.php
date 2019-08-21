@@ -51,8 +51,17 @@ class PostController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$commentsProvider=new CActiveDataProvider('Comentario', array(
+			'criteria' => array(
+				'condition' => 'id_post='.$id,
+				'order' => 'created_at DESC'
+			),
+			'pagination' => false
+		));
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'commentsProvider' => $commentsProvider
 		));
 	}
 

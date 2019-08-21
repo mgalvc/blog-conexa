@@ -6,3 +6,15 @@
 	overflow-wrap: break-word;
 	max-width: 80%;
 }
+
+.comments-title {
+	margin-top: 25px;
+}
+
+.filter-button {
+	background-color: unset;
+	border: none;
+	color: #06c;
+	text-decoration: underline;
+	cursor: pointer;
+}

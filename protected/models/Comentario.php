@@ -71,6 +71,8 @@ class Comentario extends CActiveRecord
 			'autor' => 'Autor',
 			'texto' => 'Texto',
 			'id_post' => 'Id Post',
+			'nome' => 'Seu nome',
+			'comentario' => 'Comentário'
 		);
 	}
 

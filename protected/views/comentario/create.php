@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Comentario', 'url'=>array('index')),
-	array('label'=>'Manage Comentario', 'url'=>array('admin')),
+	array('label'=>'Voltar', 'url'=>array('post/view', 'id'=>Yii::app()->request->getParam('post_id'))),
 );
 ?>
 
-<h1>Create Comentario</h1>
+<h1>Adicionar Comentário</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

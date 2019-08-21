@@ -33,11 +33,11 @@ class ComentarioController extends Controller
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('*'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -71,7 +71,7 @@ class ComentarioController extends Controller
 		{
 			$model->attributes=$_POST['Comentario'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(Yii::app()->createUrl('post/view&id='.$model->id_post));
 		}
 
 		$this->render('create',array(
@@ -167,5 +167,9 @@ class ComentarioController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function formattedDate($date) {
+		return Yii::app()->dateFormatter->formatDateTime("d/M/y",$date);
 	}
 }

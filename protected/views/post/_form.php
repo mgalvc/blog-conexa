@@ -17,19 +17,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'titulo'); ?>
-		<?php echo $form->textField($model,'titulo',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->textField($model,'titulo',array('size'=>60,'maxlength'=>128, 'minlength' => 5)); ?>
 		<?php echo $form->error($model,'titulo'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'autor'); ?>
-		<?php echo $form->textField($model,'autor',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->textField($model,'autor',array('size'=>60,'maxlength'=>128, 'minlength' => 3)); ?>
 		<?php echo $form->error($model,'autor'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'texto'); ?>
-		<?php echo $form->textArea($model,'texto',array('rows'=>10, 'cols'=>60,'maxlength'=>500)); ?>
+		<?php echo $form->textArea($model,'texto',array('rows'=>10, 'cols'=>60,'maxlength'=>500, 'minlength' => 10)); ?>
 		<?php echo $form->error($model,'texto'); ?>
 	</div>
 
@@ -40,7 +40,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Postar' : 'Salvar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
