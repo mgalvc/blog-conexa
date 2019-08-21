@@ -5,7 +5,7 @@
 $this->breadcrumbs=array(
 	'Posts'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Editar',
 );
 
 $this->menu=array(

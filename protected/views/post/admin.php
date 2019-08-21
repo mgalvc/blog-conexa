@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Posts'=>array('index'),
-	'Manage',
+	'Todos',
 );
 
 $this->menu=array(

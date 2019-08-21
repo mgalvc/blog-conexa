@@ -2622,3 +2622,93 @@ Stack trace:
 REQUEST_URI=/blog/index.php?r=post/create
 HTTP_REFERER=http://localhost/blog/index.php?r=post/index
 ---
+2019/08/21 11:41:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`tbl_comentario`, CONSTRAINT `tbl_comentario_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `tbl_post` (`id`)). The SQL statement executed was: DELETE FROM `tbl_post` WHERE `tbl_post`.`id`=8.
+in /var/www/html/blog/protected/controllers/PostController.php (122)
+in /var/www/html/blog/index.php (13)
+2019/08/21 11:41:15 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`tbl_comentario`, CONSTRAINT `tbl_comentario_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `tbl_post` (`id`)). The SQL statement executed was: DELETE FROM `tbl_post` WHERE `tbl_post`.`id`=8 in /var/www/html/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1739): CDbCommand->execute()
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1162): CActiveRecord->deleteByPk('8')
+#2 /var/www/html/blog/protected/controllers/PostController.php(122): CActiveRecord->delete()
+#3 [internal function]: PostController->actionDelete('8')
+#4 /var/www/html/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#5 /var/www/html/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#6 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/html/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/html/yii/framework/web/CController.php(1117): CFilterChain->run()
+#9 /var/www/html/yii/framework/web/filters/CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#10 /var/www/html/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/html/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/html/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/html/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii/framework/web/CWebApplication.php(283): CController->run('delete')
+#18 /var/www/html/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('post/delete')
+#19 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/html/blog/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/blog/index.php?r=post/delete&id=8
+HTTP_REFERER=http://localhost/blog/index.php?r=post/view&id=8
+---
+2019/08/21 11:41:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`tbl_comentario`, CONSTRAINT `tbl_comentario_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `tbl_post` (`id`)). The SQL statement executed was: DELETE FROM `tbl_post` WHERE `tbl_post`.`id`=8.
+in /var/www/html/blog/protected/controllers/PostController.php (122)
+in /var/www/html/blog/index.php (13)
+2019/08/21 11:41:33 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`tbl_comentario`, CONSTRAINT `tbl_comentario_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `tbl_post` (`id`)). The SQL statement executed was: DELETE FROM `tbl_post` WHERE `tbl_post`.`id`=8 in /var/www/html/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1739): CDbCommand->execute()
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1162): CActiveRecord->deleteByPk('8')
+#2 /var/www/html/blog/protected/controllers/PostController.php(122): CActiveRecord->delete()
+#3 [internal function]: PostController->actionDelete('8')
+#4 /var/www/html/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#5 /var/www/html/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#6 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/html/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/html/yii/framework/web/CController.php(1117): CFilterChain->run()
+#9 /var/www/html/yii/framework/web/filters/CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#10 /var/www/html/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/html/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/html/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/html/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii/framework/web/CWebApplication.php(283): CController->run('delete')
+#18 /var/www/html/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('post/delete')
+#19 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/html/blog/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/blog/index.php?r=post/delete&id=8
+HTTP_REFERER=http://localhost/blog/index.php?r=post/view&id=8
+---
+2019/08/21 11:41:39 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`tbl_comentario`, CONSTRAINT `tbl_comentario_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `tbl_post` (`id`)). The SQL statement executed was: DELETE FROM `tbl_post` WHERE `tbl_post`.`id`=8.
+in /var/www/html/blog/protected/controllers/PostController.php (122)
+in /var/www/html/blog/index.php (13)
+2019/08/21 11:41:39 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`tbl_comentario`, CONSTRAINT `tbl_comentario_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `tbl_post` (`id`)). The SQL statement executed was: DELETE FROM `tbl_post` WHERE `tbl_post`.`id`=8 in /var/www/html/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1739): CDbCommand->execute()
+#1 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1162): CActiveRecord->deleteByPk('8')
+#2 /var/www/html/blog/protected/controllers/PostController.php(122): CActiveRecord->delete()
+#3 [internal function]: PostController->actionDelete('8')
+#4 /var/www/html/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#5 /var/www/html/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#6 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/www/html/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/www/html/yii/framework/web/CController.php(1117): CFilterChain->run()
+#9 /var/www/html/yii/framework/web/filters/CInlineFilter.php(59): CController->filterPostOnly(Object(CFilterChain))
+#10 /var/www/html/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/html/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/www/html/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/www/html/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/www/html/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/www/html/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii/framework/web/CWebApplication.php(283): CController->run('delete')
+#18 /var/www/html/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('post/delete')
+#19 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/html/blog/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/blog/index.php?r=post/delete&id=8
+HTTP_REFERER=http://localhost/blog/index.php?r=post/view&id=8
+---

@@ -21,7 +21,7 @@ CREATE TABLE tbl_comentario (
 	created_at TIMESTAMP NOT NULL,
 	updated_at TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW(),
 	id_post INTEGER NOT NULL,
-	FOREIGN KEY (id_post) REFERENCES tbl_post(id)
+	FOREIGN KEY (id_post) REFERENCES tbl_post(id) ON DELETE CASCADE
 );
 
 INSERT INTO tbl_categoria (nome) VALUES ('Integrações');

@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Comentarios'=>array('index'),
-	'Create',
+	'Adicionar',
 );
 
 $this->menu=array(
